@@ -12,9 +12,11 @@ const WordCounter = function () {
     };
 
     WordCounter.prototype.countWord = function (string) {
-        const arrayWord = string.split(" ");
-        return arrayWord.length;
+        const words = string.split(" ");
+        return words.length;
     };
+
+
 
 }
 module.exports = WordCounter;
