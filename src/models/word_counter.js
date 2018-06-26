@@ -3,10 +3,11 @@ const PubSub = require( '../helpers/pub_sub.js');
 const WordCounter = function () {
 
     WordCounter.prototype.bindEvents = function () {
-        PubSub.subscribe('InputView: number-word', (event) => {
+        PubSub.subscribe('InputView: inputtedWord', (event) => {
             const inputtedWord = event.detail;
             const result = this.countWord(inputtedWord);
             PubSub.publish('WordCounter: result', result)
+            console.log(result);
         })
     };
 
